@@ -55,4 +55,5 @@ describe('Verify the login functionality', () => {
     // Enter blank username and password
     cy.get('[class="btn_skyblue w-100 align-items-center"]').should('be.disabled'); // Assert that the button is disabled
   });
+  
 });
