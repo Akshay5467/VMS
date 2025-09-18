@@ -46,6 +46,6 @@ describe('Unique Programme name', () => {
         cy.get('[id="icondisplay"]').click();
         cy.get('[data-date="2025-3-16"]').click()
         cy.get('[class="float-end"]').click().wait(3000);
-        cy.get('[type="button"]').click();
+        cy.get('[type="button"]').click()
     });
 });

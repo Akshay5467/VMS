@@ -1,4 +1,8 @@
 /// <reference types="cypress" />
+const timestamp = Date.now();
+const firstName = `John${timestamp}`;
+const lastName = `Doe${timestamp}`;
+const email = `john.doe${timestamp}@example.com`;
 
 describe('Verify the login functionality', () => {
   beforeEach(() => {

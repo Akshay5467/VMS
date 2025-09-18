@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-07-12T04:48:40.206Z",
+    "end": "2025-07-12T04:52:11.588Z",
+    "duration": 211382,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2c0a7dc1-2a4b-465f-a2be-b1eb8c6e21c3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\UniqueProgramme.cy.js",
+      "file": "cypress\\e2e\\UniqueProgramme.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5693d0b8-049d-48b8-9279-6af781595ef7",
+          "title": "Unique Programme name",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a unique Programme via UI",
+              "fullTitle": "Unique Programme name should create a unique Programme via UI",
+              "timedOut": null,
+              "duration": 211247,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueCode = `PRG-${(0, _uuid.v4)()}`; // Always unique\ncy.visit('/');\ncy.get('[formcontrolname=\"username\"]').type('admin');\ncy.get('[formcontrolname=\"password\"]').type('Admin@Simplify');\ncy.get('[class=\"col-12 ps-1\"]').click().wait(4000);\ncy.get('[class=\"cursor pl_10 fs_13\"]').contains('Programs').click();\ncy.get('[class=\"d-none d-md-flex\"]').click();\n// Select Client\ncy.get('[class=\"ng-input\"]').first().type('AkshayVMS').wait(3000).type('{downarrow}').type('{enter}');\n; //  \ncy.get('[class=\"ng-input\"]').last().click();\ncy.contains('MSP-MANAGED').click().wait(1000);\n// Select MSP\ncy.get('[class=\"ng-input\"]').last().type('AkshayVMS').wait(3000).type('{downarrow}').type('{enter}'); // \ncy.get('[id=\"inputName\"]').type(programName).wait(1000);\ncy.get('[id=\"inputNumber\"]').type(uniqueCode);\ncy.get('[id=\"icondisplay\"]').click();\ncy.get('[data-date=\"2025-3-16\"]').click();\ncy.get('[class=\"float-end\"]').click().wait(3000);\ncy.get('[type=\"button\"]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-date=\"2025-3-16\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-date=\"2025-3-16\"]`, but never found it.\n    at Context.eval (webpack://vms-simplify/./cypress/e2e/UniqueProgramme.cy.js:47:11)",
+                "diff": null
+              },
+              "uuid": "299ea3fd-b595-4195-a7ec-8a63bc1bbb4d",
+              "parentUUID": "5693d0b8-049d-48b8-9279-6af781595ef7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "299ea3fd-b595-4195-a7ec-8a63bc1bbb4d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 211247,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-06-28T08:30:36.346Z",
+    "end": "2025-06-28T08:31:18.756Z",
+    "duration": 42410,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "09b1908d-71b8-443f-9888-ac9f089a953a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\UniqueProgramme.cy.js",
+      "file": "cypress\\e2e\\UniqueProgramme.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ed0f12f-e896-49dd-a17a-4d71941a71d2",
+          "title": "Unique Programme name",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a unique Programme via UI",
+              "fullTitle": "Unique Programme name should create a unique Programme via UI",
+              "timedOut": null,
+              "duration": 42367,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const uniqueCode = `PRG-${(0, _uuid.v4)()}`; // Always unique\ncy.visit('/');\ncy.get('[formcontrolname=\"username\"]').type('admin');\ncy.get('[formcontrolname=\"password\"]').type('Admin@Simplify');\ncy.get('[class=\"col-12 ps-1\"]').click().wait(4000);\ncy.get('[class=\"cursor pl_10 fs_13\"]').contains('Programs').click();\ncy.get('[class=\"d-none d-md-flex\"]').click();\n// Select Client\ncy.get('[class=\"ng-input\"]').first().type('AkshayVMS').wait(3000).type('{downarrow}').type('{enter}');\n; //  \ncy.get('[class=\"ng-input\"]').last().click();\ncy.contains('MSP-MANAGED').click().wait(1000);\n// Select MSP\ncy.get('[class=\"ng-input\"]').last().type('AkshayVMS').wait(3000).type('{downarrow}').type('{enter}'); // \ncy.get('[id=\"inputName\"]').type(programName).wait(1000);\ncy.get('[id=\"inputNumber\"]').type(uniqueCode);\ncy.get('[id=\"icondisplay\"]').click();\ncy.get('[data-date=\"2025-3-16\"]').click();\ncy.get('[class=\"float-end\"]').click().wait(3000);\ncy.get('[type=\"button\"]').click();",
+              "err": {
+                "message": "CypressError: `cy.type()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.type()`.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou can typically solve this by breaking up a chain. For example, rewrite:\n\n> `cy.get('button').click().should('have.class', 'active')`\n\nto\n\n> `cy.get('button').as('btn').click()`\n> `cy.get('@btn').should('have.class', 'active')`\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: `cy.type()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.type()`.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou can typically solve this by breaking up a chain. For example, rewrite:\n\n> `cy.get('button').click().should('have.class', 'active')`\n\nto\n\n> `cy.get('button').as('btn').click()`\n> `cy.get('@btn').should('have.class', 'active')`\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at isAttached (https://qa-account.simplifysandbox.net/__cypress/runner/cypress_runner.js:146779:58)\n    at validateType (https://qa-account.simplifysandbox.net/__cypress/runner/cypress_runner.js:146649:9)\n    at Object.isType (https://qa-account.simplifysandbox.net/__cypress/runner/cypress_runner.js:146684:7)\n    at $Cy.pushSubject (https://qa-account.simplifysandbox.net/__cypress/runner/cypress_runner.js:140352:22)\n    at wrapped (https://qa-account.simplifysandbox.net/__cypress/runner/cypress_runner.js:139909:19)\nFrom Your Spec Code:\n    at Context.eval (webpack://vms-simplify/./cypress/e2e/UniqueProgramme.cy.js:34:74)",
+                "diff": null
+              },
+              "uuid": "cd55dade-0e5f-4eb2-91d9-67ca22442d10",
+              "parentUUID": "8ed0f12f-e896-49dd-a17a-4d71941a71d2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cd55dade-0e5f-4eb2-91d9-67ca22442d10"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 42367,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
